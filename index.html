@@ -4,23 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title></title>
+  <title>GitHub User Search App</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  devfinder
 
-  Light
-  Dark
 
-  Search GitHub username...
-  Search
 
-  Joined
+  <section class="container">
+    <header>
+      <h2 class="app-title">devfinder</h2>
+      <h4 class="mode-switch"><span>DARK</span> <img src="assets/icon-moon.svg" alt="Moon svg"></h4>
+    </header>
 
-  Repos
-  Followers
-  Following
+    <div class="search-bar">
+      <img src="assets/icon-search.svg" alt="Icon search svg">
+      <input type="text" placeholder="Search GitHub username...">
+      <button class="search btn btn-primary">
+        <span class="search__no-results">
+          No results
+        </span>
+        Search
+      </button>
+    </div>
+  
+    <article class="user-info">
+      Joined
+  
+      Repos
+      Followers
+      Following
+    </article>
 
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>
