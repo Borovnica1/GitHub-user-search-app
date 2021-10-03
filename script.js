@@ -1,7 +1,7 @@
 console.log('Idemooo');
 
-const usernameInput = document.querySelector('.username');
-const searchBtn = document.querySelector('.submit');
+const usernameInput = document.querySelector('.search-bar__username');
+const searchBtn = document.querySelector('.search');
 
 
 searchBtn.addEventListener('click', () => {

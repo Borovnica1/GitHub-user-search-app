@@ -21,7 +21,7 @@
 
     <div class="search-bar">
       <img src="assets/icon-search.svg" alt="Icon search svg">
-      <input type="text" placeholder="Search GitHub username...">
+      <input class="search-bar__username" type="text" placeholder="Search GitHub username...">
       <button class="search btn btn-primary">
         <span class="search__no-results">
           No results
@@ -31,11 +31,54 @@
     </div>
   
     <article class="user-info">
-      Joined
-  
-      Repos
-      Followers
-      Following
+      <div class="user-info__about">
+        <img src="assets/octocat.png" alt="Octocat image">
+        <div class="user-info__name-and-username">
+          <h2 class="user-info__name">The Octocat</h2>
+          <br>
+          <h3 class="user-info__username">@octocat</h3>
+        </div>
+        <h4>Joined <span class="user-info__date-joined">25. Jan 2011</span></h4>
+      </div>
+      
+      <div class="user-info__stats">
+        <p class="user-info__bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, tenetur accusamus cumque rem maiores ut fugit voluptatem. Minus consequatur quis pariatur? Quia, beatae voluptas? Non earum sed quis quibusdam? Fuga.</p>
+        
+        <div class="user-info__repos-following">
+          <div>
+            <h4>Repos</h4>
+            <br>
+            <h2 class="user-info__repos">8</h2>
+          </div>
+          <div><h4>Followers</h4>
+            <br>
+            <h2 class="user-info__repos">3938</h2>
+          </div>
+          <div><h4>Following</h4>
+            <br>
+            <h2 class="user-info__repos">9</h2>
+          </div>
+        </div>
+
+        <div class="user-info__city-links-company">
+          <div>
+            <img src="assets/icon-location.svg" alt="Svg icon">
+            <h4 class="user-info__location">San Francisco</h4>
+          </div>
+          <div>
+            <img src="assets/icon-twitter.svg" alt="Svg icon">
+            <h4 class="user-twitter">Not Available</h4>
+          </div>
+          <div>
+            <img src="assets/icon-website.svg" alt="Svg icon">
+            <a href="https://github.blog"><h4 class="user-info__website">https://github.blog</h4></a>
+          </div>
+          <div>
+            <img src="assets/icon-company.svg" alt="Svg icon">
+            <a href="https://github.com/github"><h4 class="user-info__company">@github</h4></a>
+          </div>
+        </div>
+      </div>
     </article>
 
   </section>
