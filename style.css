@@ -63,6 +63,19 @@ p {
   color: rgb(var(--secondary-color));
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.not-avail * {
+  opacity: .7;
+  filter: brightness(70%);
+}
+
 h1 {
   font-size: 38px;
   font-weight: 700;
@@ -168,12 +181,12 @@ header {
 }
 
 .user-info {
-  height: 540px;
   margin-top: 30px;
   border-radius: 10px;
   background-color: rgb(var(--white-color));
   box-shadow: 0px 10px 25px rgba(var(--dark-secondary-color), .1);
   padding: 50px;
+  overflow: hidden;
 }
 
 .user-info__about {
@@ -227,4 +240,218 @@ header {
 .user-info__city-links-company > div > h4,
 .user-info__city-links-company > div > a {
   margin-left: 30px;
+}
+
+
+@media (max-width: 900px) and (min-height: 500px) {
+  :root {
+    --font-size: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 26px;
+    white-space: nowrap;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4, h4 * {
+    font-size: 16px;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+
+  .user-info__about {
+    position: relative;
+  }
+
+  .user-info__date {
+    position: absolute;
+    bottom: 27%;
+    left: 170px;;
+  }
+
+  .user-info__stats {
+    margin-left: 0px;
+  }
+
+  .user-info__bio {
+    transform: translateY(0%);
+    margin: 40px 0;
+  }
+}
+
+@media (max-width: 550px) and (min-height: 500px) {
+  :root {
+    --font-size: 14px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4, h4 * {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .user-info {
+    padding: 20px;
+  }
+
+  .user-info__date {
+    bottom: 5%;
+    left: 130px;
+  }
+
+  .search-bar img {
+    padding: 0px 8px;
+  }
+
+  .user-info__about img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 30px;
+  }
+
+  .user-info__city-links-company {
+    grid-template-columns: 100%;
+    grid-row-gap: 17px;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+
+@media (max-height: 750px) and (min-width: 550px) {
+  body {
+    height: auto;
+  }
+  
+
+  .container {
+    width: 90%;
+  }
+
+  header {
+    padding: 15px 0;
+  }
+
+  .user-info {
+    padding: 30px;
+  }
+}
+
+@media (max-height: 650px) and (min-width: 550px) {
+  :root {
+    --font-size: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 26px;
+    white-space: nowrap;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4, h4 * {
+    font-size: 16px;
+  }
+
+  header {
+    padding: 10px 0;
+  }
+
+  .user-info {
+    margin-top: 10px;
+    padding: 20px;
+  }
+
+  .user-info__city-links-company {
+    margin-top: 5px;
+  }
+
+  .user-info__repos-following {
+    padding: 10px 30px;
+  }
+
+  .user-info__city-links-company {
+    margin-top: 5px;
+  }
+}
+
+@media (max-height: 550px) and (min-width: 550px) {
+  :root {
+    --font-size: 14px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4, h4 * {
+    font-size: 14px;
+  }
+
+  .user-info {
+    display: flex;
+  }
+
+  .user-info__about {
+    display: flex;
+    width: 7%;
+    flex-direction: column;
+  }
+
+  .user-info__about img {
+    width: 110px;
+  }
+
+  .user-info__bio {
+    height: auto;
+    transform: translateY(0%);
+    margin-bottom: 10px;
+  }
+
+  .user-info__repos-following {
+    padding: 5px 30px;
+  }
+
+  .user-info__stats {
+    margin-left: 140px;
+  }
+
 }
