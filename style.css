@@ -71,9 +71,9 @@ a:hover {
   text-decoration: underline;
 }
 
+.not-avail,
 .not-avail * {
-  opacity: .7;
-  filter: brightness(70%);
+  opacity: .5;
 }
 
 h1 {
@@ -87,7 +87,7 @@ h2 {
   color: black;
 }
 
-h3 {
+h3, h3 * {
   font-size: 22px;
   color: rgb(var(--primary-color));
 }
@@ -96,6 +96,10 @@ h4, h4 * {
   font-size: 18px;
   color: rgb(var(--secondary-color));
   white-space: nowrap;
+}
+
+.active {
+  display: block !important;
 }
 
 .btn {
@@ -171,6 +175,7 @@ header {
 }
 
 .search__no-results {
+  display: none;
   position: absolute;
   left: 0;
   top: 50%;
@@ -186,7 +191,6 @@ header {
   background-color: rgb(var(--white-color));
   box-shadow: 0px 10px 25px rgba(var(--dark-secondary-color), .1);
   padding: 50px;
-  overflow: hidden;
 }
 
 .user-info__about {
@@ -211,8 +215,8 @@ header {
 }
 
 .user-info__bio {
-  height: 75px;
-  overflow: scroll;
+  max-height: 75px;
+  overflow-y: scroll;
   transform: translateY(-50%);
 }
 
@@ -240,6 +244,10 @@ header {
 .user-info__city-links-company > div > h4,
 .user-info__city-links-company > div > a {
   margin-left: 30px;
+}
+
+.scrollable {
+  overflow-x: scroll;
 }
 
 
@@ -346,7 +354,6 @@ header {
   body {
     height: auto;
   }
-  
 
   .container {
     width: 90%;
@@ -357,6 +364,7 @@ header {
   }
 
   .user-info {
+    overflow-x: scroll;
     padding: 30px;
   }
 }
@@ -454,4 +462,11 @@ header {
     margin-left: 140px;
   }
 
+}
+
+@media (max-width: 350px) and (min-height: 500px)
+{
+  .container {
+    width: 98%;
+  }
 }
