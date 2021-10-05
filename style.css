@@ -5,6 +5,7 @@
   font-family: monospace;
   font-weight: 300;
   font-size: var(--font-size);
+  transition: background-color 0.6s ease, color 1s ease;
 }
 
 :root {
@@ -28,17 +29,31 @@
   --secondary-color: 105, 124, 154;
   --tertiary-color: 75, 106, 155;
   --neutral-color: 43, 52, 66;
-  --background-color: 246, 248, 255;
+  --background-color-light: 246, 248, 255;
   --white-color: 254, 254, 254;
 
   /* Dark Mode Colors */
   --dark-primary-color: 0, 121, 255;
   --dark-white-color: 254, 254, 254;
-  --dark-secondary-color: 20, 20, 47;
-  --dark-tertiary-color: 30, 42, 71;
+  --background-color-dark: 20, 20, 47;
+  --foreground-color-dark: 30, 42, 71;
 
   
   --font-size: 18px;
+}
+
+.light-theme {
+  --background-color: var(--background-color-light);
+  --foreground-color: var(--white-color);
+  --font-color: var(--secondary-color);
+  --font-color-heading: var(--neutral-color)
+}
+
+.dark-theme {
+  --background-color: var(--background-color-dark);
+  --foreground-color: var(--foreground-color-dark);
+  --font-color: var(--white-color);
+  --font-color-heading: var(--white-color);
 }
 
 body {
@@ -60,7 +75,7 @@ br {
  }
 
 p {
-  color: rgb(var(--secondary-color));
+  color: rgb(var(--font-color));
 }
 
 a {
@@ -73,18 +88,18 @@ a:hover {
 
 .not-avail,
 .not-avail * {
-  opacity: .5;
+  opacity: .8;
 }
 
-h1 {
+h1, h1 * {
   font-size: 38px;
   font-weight: 700;
 }
 
-h2 {
+h2, h2 * {
   font-size: 28px;
   font-weight: 600;
-  color: black;
+  color: rgb(var(--font-color-heading));
 }
 
 h3, h3 * {
@@ -94,7 +109,7 @@ h3, h3 * {
 
 h4, h4 * {
   font-size: 18px;
-  color: rgb(var(--secondary-color));
+  color: rgb(var(--font-color));
   white-space: nowrap;
 }
 
@@ -125,10 +140,6 @@ header {
   padding: 30px 0;
 }
 
-.app-title {
-  color: black;
-}
-
 .mode-switch {
   display: flex;
   justify-content: center;
@@ -150,9 +161,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(var(--white-color));
+  background-color: rgb(var(--foreground-color));
   border-radius: 10px;
-  box-shadow: 0px 10px 25px rgba(var(--dark-secondary-color), .1);
+  box-shadow: 0px 10px 25px rgba(var(--background-color-dark), .1);
 }
 
 .search-bar img {
@@ -160,9 +171,14 @@ header {
 }
 
 .search-bar input {
+  background-color: rgb(var(--foreground-color));
   flex-grow: 1;
   border: none;
   padding: 20px 0;
+  color: rgb(var(--font-color-heading));
+}
+::placeholder {
+  color: rgb(var(--font-color));
 }
 
 .search-bar input:focus {
@@ -188,8 +204,8 @@ header {
 .user-info {
   margin-top: 30px;
   border-radius: 10px;
-  background-color: rgb(var(--white-color));
-  box-shadow: 0px 10px 25px rgba(var(--dark-secondary-color), .1);
+  background-color: rgb(var(--foreground-color));
+  box-shadow: 0px 10px 25px rgba(var(--background-color-dark), .1);
   padding: 50px;
 }
 

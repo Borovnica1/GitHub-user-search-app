@@ -1,14 +1,21 @@
 const usernameInput = document.querySelector('.search-bar__username');
 const searchBtn = document.querySelector('.search');
 const noResultsEl = document.querySelector('.search__no-results');
+const modeSwitchBtn = document.querySelector('.mode-switch');
 
-function addOverflowScroll() {
-  const arr = [document.querySelector('.user-info__location'), document.querySelector('.user-info__twitter'), document.querySelector('.user-info__website'), document.querySelector('.user-info__company')];
-  for (let el of arr) {
-    el.parentElement.parentElement.classList.add('scrollable');
+modeSwitchBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  const modeText = modeSwitchBtn.children[0];
+  const modeImg = modeSwitchBtn.children[1];
+  console.log('XX', modeText, modeImg);
+  if (modeText.textContent === 'DARK') {
+    modeText.textContent = 'LIGHT';
+    modeImg.src = 'assets/icon-sun.svg';
+  } else {
+    modeText.textContent = 'DARK';
+    modeImg.src = 'assets/icon-moon.svg';
   }
-}
-addOverflowScroll();
+});
 
 searchBtn.addEventListener('click', () => {
   const username = usernameInput.value;
@@ -47,7 +54,6 @@ function displayUserData(data) {
   const userInfoCompany = document.querySelector('.user-info__company');
   
   if (data) {
-    console.log('idemo', data);
     userInfoUsername.textContent = data.login;
     userInfoUsername.parentElement.href = data.html_url;
     userInfoProfileImage.src = data.avatar_url;
@@ -81,7 +87,7 @@ function displayUserData(data) {
       }
     });
   }
-}
+};
 
 function addRemoveNotAvailClass(element, op) {
   if (element.classList.contains('user-info__location') ||
@@ -100,6 +106,14 @@ function addRemoveNotAvailClass(element, op) {
       element.classList.remove('not-avail');
     }
   }
+};
+
+function addOverflowScroll() {
+  const arr = [document.querySelector('.user-info__location'), document.querySelector('.user-info__twitter'), document.querySelector('.user-info__website'), document.querySelector('.user-info__company')];
+  for (let el of arr) {
+    el.parentElement.parentElement.classList.add('scrollable');
+  }
 }
 
+addOverflowScroll();
 userData(`https://api.github.com/users/octocat`);
