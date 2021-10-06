@@ -236,6 +236,7 @@ header {
 
 
 .user-info__stats {
+  flex-grow: 1;
   margin-left: 170px;
 }
 
