@@ -39,6 +39,7 @@ async function userData(url) {
 }
 
 function displayUserData(data) {
+  console.log('MMM', data);
   const userInfoName = document.querySelector('.user-info__name');
   const userInfoProfileImage = document.querySelector('.user-info__profile-img');
   const userInfoUsername = document.querySelector('.user-info__username');
@@ -80,7 +81,8 @@ function displayUserData(data) {
           } else if (element.classList.contains('user-info__website')) {
             element.parentElement.href = attribute;
           } else if (element.classList.contains('user-info__company')) {
-            element.parentElement.href = attribute;
+            const comp = data.company.split(' ')[0].slice(1);
+            element.parentElement.href = `https://github.com/${comp}`;
           }
         }
       }
@@ -113,4 +115,4 @@ function formatDate(date) {
   return `${date[8]+date[9]} ${months[Number(date[5]+date[6])-1]} ${date[0]+date[1]+date[2]+date[3]}`;
 };
 
-userData(`https://api.github.com/users/Developer-felix`);
+userData(`https://api.github.com/users/octocat`);

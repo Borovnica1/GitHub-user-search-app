@@ -5,7 +5,7 @@
   font-family: monospace;
   font-weight: 300;
   font-size: var(--font-size);
-  transition: background-color 0.6s ease, color 1s ease;
+  transition: background-color .2s ease, color 1s ease;
 }
 
 :root {
@@ -88,6 +88,7 @@ a:hover {
 
 .not-avail,
 .not-avail * {
+  pointer-events: none;
   opacity: .8;
 }
 
@@ -383,6 +384,10 @@ header {
     grid-template-columns: 100%;
     grid-row-gap: 0px;
     grid-template-rows: repeat(4, 1fr);
+  }
+
+  .user-info__repos-following {
+    text-align: center;
   }
 }
 
