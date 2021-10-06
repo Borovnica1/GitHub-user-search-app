@@ -107,18 +107,10 @@ function addRemoveNotAvailClass(element, op) {
   }
 };
 
-function addOverflowScroll() {
-  const arr = [document.querySelector('.user-info__location'), document.querySelector('.user-info__twitter'), document.querySelector('.user-info__website'), document.querySelector('.user-info__company')];
-  for (let el of arr) {
-    el.parentElement.parentElement.classList.add('scrollable');
-  }
-};
 
 function formatDate(date) {
-  console.log('XXX', date);
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   return `${date[8]+date[9]} ${months[Number(date[5]+date[6])-1]} ${date[0]+date[1]+date[2]+date[3]}`;
 };
 
-addOverflowScroll();
-userData(`https://api.github.com/users/octocat`);
+userData(`https://api.github.com/users/Developer-felix`);

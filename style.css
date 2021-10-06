@@ -110,7 +110,6 @@ h3, h3 * {
 h4, h4 * {
   font-size: 18px;
   color: rgb(var(--font-color));
-  white-space: nowrap;
 }
 
 .active {
@@ -207,12 +206,18 @@ header {
   background-color: rgb(var(--foreground-color));
   box-shadow: 0px 10px 25px rgba(var(--background-color-dark), .1);
   padding: 50px;
-  overflow-x: scroll;
 }
 
 .user-info__about {
+  position: relative;
   display: flex;
   justify-content: space-between;
+}
+
+.user-info__date {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .user-info__name-and-username {
@@ -233,7 +238,6 @@ header {
 
 .user-info__bio {
   max-height: 75px;
-  overflow-y: scroll;
   transform: translateY(-50%);
 }
 
@@ -253,9 +257,8 @@ header {
   margin-top: 20px;
 }
 
-.user-info__city-links-company > div {
-  display: flex;
-  align-items: center;
+.user-info__city-links-company > div > img {
+  float: left;
 }
 
 .user-info__city-links-company > div > h4,
@@ -263,8 +266,15 @@ header {
   margin-left: 30px;
 }
 
-.scrollable {
-  overflow-x: scroll;
+.user-info__city-links-company,
+.user-info__name-and-username {
+  overflow-wrap: break-word;
+}
+
+.div {
+  width: 100px;
+  background-color: rgba(0, 255, 255, 0.315);
+  overflow-wrap: break-word;
 }
 
 
@@ -279,7 +289,6 @@ header {
 
   h2, h2 * {
     font-size: 26px;
-    white-space: nowrap;
   }
 
   h3, h2 * {
@@ -294,15 +303,15 @@ header {
     width: 80%;
   }
 
-
-  .user-info__about {
+  .user-info__name-and-username {
     position: relative;
+    height: fit-content;
   }
 
   .user-info__date {
     position: absolute;
-    bottom: 27%;
-    left: 170px;;
+    left: 0;
+    top: 110%;
   }
 
   .user-info__stats {
@@ -314,6 +323,8 @@ header {
     margin: 40px 0;
   }
 }
+
+
 
 @media (max-width: 550px) and (min-height: 500px) {
   :root {
@@ -336,17 +347,26 @@ header {
     font-size: 14px;
   }
 
+  body {
+    height: auto;
+  }
+
+  header {
+    padding: 5px 0;
+  }
+
   .container {
     width: 90%;
+    margin-top: 50px;
   }
 
   .user-info {
-    padding: 20px;
+    padding: 10px;
+    margin-top: 10px;
   }
 
-  .user-info__date {
-    bottom: 5%;
-    left: 130px;
+  .user-info__bio {
+    margin: 20px 0;
   }
 
   .search-bar img {
@@ -361,8 +381,27 @@ header {
 
   .user-info__city-links-company {
     grid-template-columns: 100%;
-    grid-row-gap: 17px;
+    grid-row-gap: 0px;
     grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+
+@media (max-width: 400px) and (min-height: 500px) {
+  .container {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 400px) and (min-height: 600px) {
+  .container {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 400px) and (min-height: 700px) {
+  .container {
+    margin-top: 80px;
   }
 }
 
@@ -381,8 +420,18 @@ header {
   }
 
   .user-info {
-    overflow-x: scroll;
     padding: 30px;
+  }
+
+  .user-info__name-and-username {
+    position: relative;
+    height: fit-content;
+  }
+
+  .user-info__date {
+    position: absolute;
+    left: 0;
+    top: 110%;
   }
 }
 
@@ -397,7 +446,6 @@ header {
 
   h2, h2 * {
     font-size: 26px;
-    white-space: nowrap;
   }
 
   h3, h3 * {
@@ -418,16 +466,13 @@ header {
   }
 
   .user-info__city-links-company {
-    margin-top: 5px;
+    margin-top: 55px;
   }
 
   .user-info__repos-following {
     padding: 10px 30px;
   }
 
-  .user-info__city-links-company {
-    margin-top: 5px;
-  }
 }
 
 @media (max-height: 550px) and (min-width: 550px) {
@@ -436,7 +481,7 @@ header {
   }
 
   h1 {
-    font-size: 34px;
+    font-size: 28px;
   }
 
   h2, h2 * {
@@ -448,16 +493,27 @@ header {
   }
 
   h4, h4 * {
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  header {
+    padding: 25px 0;
+  }
+
+  .search-bar input {
+    padding: 18px 0;
   }
 
   .user-info {
     display: flex;
+    margin-top: 10px;
+    padding: 20px;
+    padding-bottom: 40px;
   }
 
   .user-info__about {
-    display: flex;
-    width: 7%;
+    display: block;
+    width: 25%;
     flex-direction: column;
   }
 
@@ -468,15 +524,105 @@ header {
   .user-info__bio {
     height: auto;
     transform: translateY(0%);
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
   }
 
   .user-info__repos-following {
     padding: 5px 30px;
   }
 
+  .user-info__repos-following * {
+    font-size: 18px;
+  }
+
+  br {
+    margin-top: 8px;
+  }
+
+  .user-info__city-links-company {
+    margin-top: 30px;
+    grid-template-rows: 45px;
+  }
+
   .user-info__stats {
-    margin-left: 140px;
+    overflow: hidden;
+    margin: 0;
+  }
+
+}
+
+@media (max-height: 400px) and (min-width: 550px) {
+  :root {
+    --font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2, h2 * {
+    font-size: 20px;
+  }
+
+  h3, h3 * {
+    font-size: 14px;
+  }
+
+  h4, h4 * {
+    font-size: 12px;
+  }
+
+  header {
+    padding: 5px 0;
+  }
+
+  .search-bar input {
+    padding: 12px 0;
+  }
+
+  .user-info {
+    display: flex;
+    margin-top: 5px;
+    padding: 10px;
+    padding-bottom: 40px;
+  }
+
+  .user-info__about {
+    display: block;
+    width: 25%;
+    flex-direction: column;
+  }
+
+  .user-info__about img {
+    width: 100px;
+  }
+
+  .user-info__bio {
+    height: auto;
+    transform: translateY(0%);
+    margin: 0 0 10px 0;
+  }
+
+  .user-info__repos-following {
+    padding: 5px 30px;
+  }
+
+  .user-info__repos-following * {
+    font-size: 16px;
+  }
+
+  br {
+    margin-top: 3px;
+  }
+
+  .user-info__city-links-company {
+    margin-top: 20px;
+    grid-template-rows: 30px;
+  }
+
+  .user-info__stats {
+    overflow: hidden;
+    margin: 0;
   }
 
 }
