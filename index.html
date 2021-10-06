@@ -4,23 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title></title>
+  <title>GitHub User Search App</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light-theme">
 
-  devfinder
+  <section class="container">
+    <header>
+      <h2>devfinder</h2>
+      <h4 class="mode-switch"><span>DARK</span> <img src="assets/icon-moon.svg" alt="Moon svg"></h4>
+    </header>
 
-  Light
-  Dark
+    <div class="search-bar">
+      <img src="assets/icon-search.svg" alt="Icon search svg">
+      <input class="search-bar__username" type="text" placeholder="Search GitHub username...">
+      <button class="search btn btn-primary">
+        <span class="search__no-results">
+          No results
+        </span>
+        Search
+      </button>
+    </div>
+  
+    <article class="user-info">
+      <div class="user-info__about">
+        <img class="user-info__profile-img" src="assets/octocat.png" alt="Octocat image">
+        <div class="user-info__name-and-username">
+          <h2><span class="user-info__name"></span></h2>
+          <br>
+          <h3><a href="#">@<span class="user-info__username"></span></a></h3>
+          <h4 class="user-info__date">Joined <span class="user-info__date-joined"></span></h4>
+        </div>
+      </div>
+      
+      <div class="user-info__stats">
+        <p class="user-info__bio"></p>
+        
+        <div class="user-info__repos-following">
+          <div>
+            <h4>Repos</h4>
+            <br>
+            <h2 class="user-info__repos"></h2>
+          </div>
+          <div><h4>Followers</h4>
+            <br>
+            <h2 class="user-info__followers"></h2>
+          </div>
+          <div><h4>Following</h4>
+            <br>
+            <h2 class="user-info__following"></h2>
+          </div>
+        </div>
 
-  Search GitHub username...
-  Search
+        <div class="user-info__city-links-company">
+          <div>
+            <img src="assets/icon-location.svg" alt="Svg icon">
+            <h4><span><span class="user-info__location"></span></span></h4>
+          </div>
+          <div class="not-avail">
+            <img src="assets/icon-twitter.svg" alt="Svg icon">
+            <h4><a href="#">@<span class="user-info__twitter"></span></a></h4>
+          </div>
+          <div>
+            <img src="assets/icon-website.svg" alt="Svg icon">
+            <h4><a href="https://github.blog"><span class="user-info__website"></span></a></h4>
+          </div>
+          <div>
+            <img src="assets/icon-company.svg" alt="Svg icon">
+            <h4><a href="https://github.com/github"><span class="user-info__company"></span></a></h4>
+          </div>
+        </div>
+      </div>
+    </article>
 
-  Joined
-
-  Repos
-  Followers
-  Following
-
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>
