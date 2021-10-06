@@ -46,7 +46,8 @@
   --background-color: var(--background-color-light);
   --foreground-color: var(--white-color);
   --font-color: var(--secondary-color);
-  --font-color-heading: var(--neutral-color)
+  --font-color-heading: var(--neutral-color);
+  --icon-color: invert(54%) sepia(12%) saturate(906%) hue-rotate(178deg) brightness(86%) contrast(87%);
 }
 
 .dark-theme {
@@ -54,6 +55,7 @@
   --foreground-color: var(--foreground-color-dark);
   --font-color: var(--white-color);
   --font-color-heading: var(--white-color);
+  --icon-color: none;
 }
 
 body {
@@ -250,6 +252,10 @@ header {
   border-radius: 10px;
 }
 
+.user-info__repos-following img {
+  filter: var(--icon-color);
+}
+
 .user-info__city-links-company {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -260,6 +266,7 @@ header {
 
 .user-info__city-links-company > div > img {
   float: left;
+  filter: var(--icon-color);
 }
 
 .user-info__city-links-company > div > h4,
